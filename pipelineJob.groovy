@@ -1,9 +1,12 @@
 pipeline {
-    agent any
+    agent {
+        label 'master'
+    }
     stages {
         stage('Build') {
             steps {
                 echo 'Build'
+                echo 'mvn install'
             }
         }
         stage('Test'){
