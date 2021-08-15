@@ -13,7 +13,7 @@ docker {
     files "plugins.txt", "seedJob.xml"
 }
 
-Process process
+def process
 if (DefaultNativePlatform.getCurrentOperatingSystem().isWindows()) {
     process = "docker run --rm -v /var/run/docker.sock:/var/run/docker.sock alpine stat -c %g /var/run/docker.sock".execute()
 } else if (DefaultNativePlatform.getCurrentOperatingSystem().isLinux()) {
